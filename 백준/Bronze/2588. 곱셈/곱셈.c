@@ -5,14 +5,12 @@ int main(void) {
     scanf("%d",&a);
     scanf("%d",&b);
     
-    int target_1 = b % 10;
-    int target_10 = (b / 10) % 10;
-    int target_100 = b / 100;
-
-    printf("%d\n", a * target_1);
-    printf("%d\n", a * target_10);
-    printf("%d\n", a * target_100);
-    printf("%d\n", a * b);
-    
+    int B = b;
+    for (int i = 0; i < 3; i++) {
+        int index = B % 10;
+        printf("%d\n", a * index);
+        B = B / 10;
+    }
+    printf("%d", a * b);
     return 0;
 }
